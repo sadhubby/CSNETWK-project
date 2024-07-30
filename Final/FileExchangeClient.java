@@ -14,7 +14,6 @@ public class FileExchangeClient {
         int main = 0;
         Scanner sc = new Scanner(System.in);
 
-        // Create directory if it does not exist
         File storageDir = new File(CLIENT_STORAGE_DIR);
         if (!storageDir.exists()) {
             storageDir.mkdirs();
@@ -101,7 +100,7 @@ public class FileExchangeClient {
                     // directory function
                     else if (inputCommand.startsWith("/dir")) {
                         out.writeUTF(inputCommand);
-                        System.out.println("Files in server storage: " + in.readUTF());
+                        System.out.println("\n----- Files in server storage -----\n" + in.readUTF());
                     }
                     // get file from server function
                     else if (inputCommand.startsWith("/get")) {
